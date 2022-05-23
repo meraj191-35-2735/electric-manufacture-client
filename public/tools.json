@@ -1,0 +1,56 @@
+[
+  {
+    "_id": 1,
+    "name": "Hammer Drill Machine",
+    "description": "A drilling machine is a tool you need for those DIY projects like creating holes for fixing nails in walls or assembling furniture. The right drill machine makes your DIY project faster and hassle-free, not to mention you get precisely sized holes of varying sizes and depth in just a few minutes with minimal effort and force. ",
+    "availableQuantity": 3000,
+    "minimumOrder": 500,
+    "price": 200,
+    "image": "https://i.ibb.co/6FVmdnz/01.jpg"
+  },
+  {
+    "_id": 2,
+    "name": "Phillips Head",
+    "description": "Phillips head screwdrivers and their corresponding screws were invented for the automotive industry in the 1930s. According to Wired, they’re designed to “cam out,” or slip out, of the head of a screw once it’s tight.",
+    "availableQuantity": 4000,
+    "minimumOrder": 700,
+    "price": 300,
+    "image": "https://i.ibb.co/KWtbBfp/02.jpg"
+  },
+  {
+    "_id": 3,
+    "name": "Marson HP-2 Riveter",
+    "description": "This rivet gun has a square shoulder fulcrum pin made out of cold-formed heat-treated steel. The pin does not rotate, causing hole elongation in engaging holes or untimely tool failure in imitation tools. The riveter has four nose pieces (3/32 to 3/16 inches).",
+    "availableQuantity": 3500,
+    "minimumOrder": 150,
+    "price": 250,
+    "image": "https://i.ibb.co/zfxhdz5/03.jpg"
+  },
+  {
+    "_id": 4,
+    "name": "Dual Action Polisher",
+    "description": "The composite body reduces weight while the rubber palm and hand grips reduce vibration and increase control. Use the included side handle on either side for even more control when needed. The vented flexible backing pad accepts all standard 6” pads. A generous 10-foot power cord makes it easier to move around your vehicle. ",
+    "availableQuantity": 3800,
+    "minimumOrder": 510,
+    "price": 220,
+    "image": "https://i.ibb.co/BNxFzm6/04.jpg"
+  },
+  {
+    "_id": 5,
+    "name": "Rubber Fire Hose Reels",
+    "description": "Meet the best garden hose reels on the market. With over 20,000 customer reviews, Eley Hose Reels boast an average rating of 4.8 out of 5 stars, with 99% of customers saying they would recommend them to family and friends.",
+    "availableQuantity": 3100,
+    "minimumOrder": 200,
+    "price": 270,
+    "image": "https://i.ibb.co/cFHGxML/05.jpg"
+  },
+  {
+    "_id": 6,
+    "name": "1 Series Nutrunners ",
+    "description": "The 1 Series Angle Adjustable Shutoff Nutrunner is compact and lightweight with a well-balanced design. The adjustable shutoff clutch reduces air consumption and limits torque reaction.",
+    "availableQuantity": 3200,
+    "minimumOrder": 400,
+    "price": 100,
+    "image": "https://i.ibb.co/VMk4qQ9/06.jpg"
+  }
+]

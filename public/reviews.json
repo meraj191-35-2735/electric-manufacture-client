@@ -1,0 +1,23 @@
+[
+  {
+    "_id": 1,
+    "name": "William James",
+    "image": "https://i.ibb.co/5WPpHR6/1.jpg",
+    "country": "Argentina",
+    "des": "Just wanted to let you know how happy I was with your customer service and the products I received. I made a mistake by purchasing items using my personal account instead of my business account."
+  },
+  {
+    "_id": 2,
+    "name": "Benjamin Lucas",
+    "image": "https://i.ibb.co/BCWTjRg/2.jpg",
+    "country": "Brazil",
+    "des": "The goods have been well received! We are really satisfied with the service of International AElectriX. They help us to clear our confusion when choosing the products, fast delivery, and good after sales service."
+  },
+  {
+    "_id": 3,
+    "name": "Henry Alexandar",
+    "image": "https://i.ibb.co/j6gMKFc/3.jpg",
+    "country": "Portugal",
+    "des": "ElectriX, I purchased some air tools via the website, I found their service and communication very efficient. I was kept informed thru the whole process in a timely manner."
+  }
+]
