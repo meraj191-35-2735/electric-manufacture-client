@@ -7,6 +7,7 @@ import {
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 const BusinessSummary = () => {
   return (
@@ -14,6 +15,7 @@ const BusinessSummary = () => {
       <h1 className="text-center text-5xl text-primary my-10 font-serif">
         Why You Can Trust!
       </h1>
+
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
         <div class="card bg-base-100 shadow-xl">
           <figure class="px-10 pt-10">
@@ -22,18 +24,25 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">
-              {" "}
-              <CountUp
-                start={1}
-                end={8}
-                duration={2}
-                separator=" "
-                decimals={1}
-                decimal=""
-              ></CountUp>
-            </h2>
-            <p>Countries</p>
+            <VisibilitySensor>
+              {({ isVisible }) => (
+                <div>
+                  <p>Countries: </p>
+                  {isVisible ? (
+                    <h2 class="text-center text-4xl font-bold ">
+                      <CountUp
+                        start={1}
+                        end={8}
+                        duration={3}
+                        separator=" "
+                        decimals={1}
+                        decimal=""
+                      ></CountUp>
+                    </h2>
+                  ) : null}
+                </div>
+              )}
+            </VisibilitySensor>
           </div>
         </div>
         <div class="card bg-base-100 shadow-xl">
@@ -43,17 +52,25 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">
-              <CountUp
-                start={1}
-                end={100}
-                duration={2}
-                separator=" "
-                decimals={1}
-                decimal=""
-              ></CountUp>
-            </h2>
-            <p>Products</p>
+            <VisibilitySensor>
+              {({ isVisible }) => (
+                <div>
+                  <p>Products: </p>
+                  {isVisible ? (
+                    <h2 class="text-center text-4xl font-bold ">
+                      <CountUp
+                        start={1}
+                        end={2}
+                        duration={3}
+                        separator=""
+                        decimals={3}
+                        decimal=","
+                      ></CountUp>
+                    </h2>
+                  ) : null}
+                </div>
+              )}
+            </VisibilitySensor>
           </div>
         </div>
         <div class="card  bg-base-100 shadow-xl">
@@ -63,18 +80,25 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">
-              {" "}
-              <CountUp
-                start={1}
-                end={100}
-                duration={2}
-                separator=" "
-                decimals={2}
-                decimal=""
-              ></CountUp>
-            </h2>
-            <p>Customers</p>
+            <VisibilitySensor>
+              {({ isVisible }) => (
+                <div>
+                  <p>Customers: </p>
+                  {isVisible ? (
+                    <h2 class="text-center text-4xl font-bold ">
+                      <CountUp
+                        start={1}
+                        end={10}
+                        duration={3}
+                        separator=" "
+                        decimals={3}
+                        decimal=","
+                      ></CountUp>
+                    </h2>
+                  ) : null}
+                </div>
+              )}
+            </VisibilitySensor>
           </div>
         </div>
         <div class="card bg-base-100 shadow-xl">
@@ -84,18 +108,25 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">
-              {" "}
-              <CountUp
-                start={1}
-                end={52}
-                duration={2}
-                separator=" "
-                decimals={1}
-                decimal=""
-              ></CountUp>
-            </h2>
-            <p>Reviews</p>
+            <VisibilitySensor>
+              {({ isVisible }) => (
+                <div>
+                  <p>Countries</p>
+                  {isVisible ? (
+                    <h2 class="text-center text-4xl font-bold ">
+                      <CountUp
+                        start={1}
+                        end={5}
+                        duration={3}
+                        separator=" "
+                        decimals={2}
+                        decimal=""
+                      ></CountUp>
+                    </h2>
+                  ) : null}
+                </div>
+              )}
+            </VisibilitySensor>
           </div>
         </div>
       </div>
