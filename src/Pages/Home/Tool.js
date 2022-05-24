@@ -1,8 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Tool = ({ tool }) => {
-  const { name, description, availableQuantity, minimumOrder, price, image } =
-    tool;
+  const {
+    _id,
+    name,
+    description,
+    availableQuantity,
+    minimumOrder,
+    price,
+    image,
+  } = tool;
+  const navigate = useNavigate();
+  const handleBookNow = (id) => {
+    navigate(`/bookNow/${id}`);
+    console.log(id);
+  };
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure>
@@ -26,8 +39,11 @@ const Tool = ({ tool }) => {
         </div>
         <div class="card-actions flex justify-between">
           <p className="text-3xl py-2">Price: {price}$</p>
-          <button class="btn btn-primary btn-sm mt-3 text-white">
-            Buy Now
+          <button
+            onClick={() => handleBookNow(_id)}
+            class="btn btn-primary btn-sm mt-3 text-white"
+          >
+            Book Now
           </button>
         </div>
       </div>

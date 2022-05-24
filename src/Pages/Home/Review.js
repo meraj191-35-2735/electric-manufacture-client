@@ -2,7 +2,6 @@ import React from "react";
 
 const Review = ({ review }) => {
   const { name, des, image, country } = review;
-  console.log(image);
   return (
     <div class="card  bg-base-100 shadow-xl">
       <div className="flex justify-center items-center">

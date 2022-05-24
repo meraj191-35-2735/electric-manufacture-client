@@ -33,7 +33,7 @@ const BusinessSummary = () => {
                       <CountUp
                         start={1}
                         end={8}
-                        duration={3}
+                        duration={2}
                         separator=" "
                         decimals={1}
                         decimal=""
@@ -61,7 +61,7 @@ const BusinessSummary = () => {
                       <CountUp
                         start={1}
                         end={2}
-                        duration={3}
+                        duration={2}
                         separator=""
                         decimals={3}
                         decimal=","
@@ -89,7 +89,7 @@ const BusinessSummary = () => {
                       <CountUp
                         start={1}
                         end={10}
-                        duration={3}
+                        duration={2}
                         separator=" "
                         decimals={3}
                         decimal=","
@@ -111,13 +111,13 @@ const BusinessSummary = () => {
             <VisibilitySensor>
               {({ isVisible }) => (
                 <div>
-                  <p>Countries</p>
+                  <p>Reviews: </p>
                   {isVisible ? (
                     <h2 class="text-center text-4xl font-bold ">
                       <CountUp
                         start={1}
                         end={5}
-                        duration={3}
+                        duration={2}
                         separator=" "
                         decimals={2}
                         decimal=""
