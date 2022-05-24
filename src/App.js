@@ -2,6 +2,10 @@ import Navbar from "./Pages/Shared/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 import Booking from "./Pages/Booking/Booking";
+import Login from "./Pages/Login/Login";
+import SignUp from "./Pages/SignUp/SignUp";
+import RequireAuth from "./Pages/Login/RequireAuth";
+import ToolPage from "./Pages/ToolPage/ToolPage";
 
 function App() {
   return (
@@ -9,7 +13,17 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/bookNow/:toolId" element={<Booking></Booking>}></Route>
+        <Route path="/tools" element={<ToolPage></ToolPage>}></Route>
+        <Route
+          path="/bookNow/:toolId"
+          element={
+            <RequireAuth>
+              <Booking></Booking>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
       </Routes>
     </div>
   );
