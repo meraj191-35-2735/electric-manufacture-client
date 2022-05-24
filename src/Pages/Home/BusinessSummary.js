@@ -6,6 +6,7 @@ import {
   faPeopleGroup,
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
+import CountUp from "react-countup";
 
 const BusinessSummary = () => {
   return (
@@ -21,7 +22,17 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">80+</h2>
+            <h2 class="text-center text-4xl font-bold ">
+              {" "}
+              <CountUp
+                start={1}
+                end={8}
+                duration={2}
+                separator=" "
+                decimals={1}
+                decimal=""
+              ></CountUp>
+            </h2>
             <p>Countries</p>
           </div>
         </div>
@@ -32,7 +43,16 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">1000+</h2>
+            <h2 class="text-center text-4xl font-bold ">
+              <CountUp
+                start={1}
+                end={100}
+                duration={2}
+                separator=" "
+                decimals={1}
+                decimal=""
+              ></CountUp>
+            </h2>
             <p>Products</p>
           </div>
         </div>
@@ -43,7 +63,17 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">10,000+</h2>
+            <h2 class="text-center text-4xl font-bold ">
+              {" "}
+              <CountUp
+                start={1}
+                end={100}
+                duration={2}
+                separator=" "
+                decimals={2}
+                decimal=""
+              ></CountUp>
+            </h2>
             <p>Customers</p>
           </div>
         </div>
@@ -54,7 +84,17 @@ const BusinessSummary = () => {
             </p>
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="text-center text-4xl font-bold ">520+</h2>
+            <h2 class="text-center text-4xl font-bold ">
+              {" "}
+              <CountUp
+                start={1}
+                end={52}
+                duration={2}
+                separator=" "
+                decimals={1}
+                decimal=""
+              ></CountUp>
+            </h2>
             <p>Reviews</p>
           </div>
         </div>
