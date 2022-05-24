@@ -4,7 +4,7 @@ const Booking = () => {
   const { toolId } = useParams();
   const [bookingTool, setBookingTool] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000?_id=${toolId}`)
+    fetch(`http://localhost:5000/${toolId}`)
       .then((res) => res.json)
       .then((data) => console.log(data));
   }, [toolId]);
