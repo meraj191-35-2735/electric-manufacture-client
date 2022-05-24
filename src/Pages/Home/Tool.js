@@ -36,11 +36,11 @@ const Tool = ({ tool }) => {
           </div>
           <div className="badge badge-outline">Min. Order: {minimumOrder}</div>
         </div>
-        <div class="card-actions flex justify-between">
+        <div className="card-actions flex justify-between">
           <p className="text-3xl py-2">Price: {price}$</p>
           <button
             onClick={() => handleBookNow(_id)}
-            class="btn btn-primary btn-sm mt-3 text-white"
+            className="btn btn-primary btn-sm mt-3 text-white"
           >
             Book Now
           </button>

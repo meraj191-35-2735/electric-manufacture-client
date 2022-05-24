@@ -17,19 +17,19 @@ const BusinessSummary = () => {
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
-        <div class="card bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
+        <div className="card bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faGlobe} />
             </p>
           </figure>
-          <div class="card-body items-center text-center">
+          <div className="card-body items-center text-center">
             <VisibilitySensor>
               {({ isVisible }) => (
                 <div>
                   <p>Countries: </p>
                   {isVisible ? (
-                    <h2 class="text-center text-4xl font-bold ">
+                    <h2 className="text-center text-4xl font-bold ">
                       <CountUp
                         start={1}
                         end={8}
@@ -45,19 +45,19 @@ const BusinessSummary = () => {
             </VisibilitySensor>
           </div>
         </div>
-        <div class="card bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
+        <div className="card bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faLightbulb} />
             </p>
           </figure>
-          <div class="card-body items-center text-center">
+          <div className="card-body items-center text-center">
             <VisibilitySensor>
               {({ isVisible }) => (
                 <div>
                   <p>Products: </p>
                   {isVisible ? (
-                    <h2 class="text-center text-4xl font-bold ">
+                    <h2 className="text-center text-4xl font-bold ">
                       <CountUp
                         start={1}
                         end={2}
@@ -73,19 +73,19 @@ const BusinessSummary = () => {
             </VisibilitySensor>
           </div>
         </div>
-        <div class="card  bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
+        <div className="card  bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faPeopleGroup} />
             </p>
           </figure>
-          <div class="card-body items-center text-center">
+          <div className="card-body items-center text-center">
             <VisibilitySensor>
               {({ isVisible }) => (
                 <div>
                   <p>Customers: </p>
                   {isVisible ? (
-                    <h2 class="text-center text-4xl font-bold ">
+                    <h2 className="text-center text-4xl font-bold ">
                       <CountUp
                         start={1}
                         end={10}
@@ -101,19 +101,19 @@ const BusinessSummary = () => {
             </VisibilitySensor>
           </div>
         </div>
-        <div class="card bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
+        <div className="card bg-base-100 shadow-xl">
+          <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faThumbsUp} />
             </p>
           </figure>
-          <div class="card-body items-center text-center">
+          <div className="card-body items-center text-center">
             <VisibilitySensor>
               {({ isVisible }) => (
                 <div>
                   <p>Reviews: </p>
                   {isVisible ? (
-                    <h2 class="text-center text-4xl font-bold ">
+                    <h2 className="text-center text-4xl font-bold ">
                       <CountUp
                         start={1}
                         end={5}

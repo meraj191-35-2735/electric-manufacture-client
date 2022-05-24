@@ -46,9 +46,9 @@ const Booking = () => {
           <p className="text-3xl py-2 text-center">
             Price/Tool(Price Per Tool): {bookingTool.price}$
           </p>
-          <div class="form-control mx-auto  w-full max-w-xs">
-            <label class="label">
-              <span class="label-text">Enter Quantity</span>
+          <div className="form-control mx-auto  w-full max-w-xs">
+            <label className="label">
+              <span className="label-text">Enter Quantity</span>
             </label>
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
@@ -56,7 +56,7 @@ const Booking = () => {
                 defaultValue={bookingTool.minimumOrder}
                 contentEditable="true"
                 placeholder="Quantity"
-                class="input input-bordered input-primary w-full max-w-xs"
+                className="input input-bordered input-primary w-full max-w-xs"
                 {...register("quantity", {
                   required: {
                     value: true,
