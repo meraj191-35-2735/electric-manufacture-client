@@ -19,15 +19,7 @@ const Navbar = () => {
       <li>
         <Link to="/tools">Tools</Link>
       </li>
-      <li>
-        <Link to="/review">Review</Link>
-      </li>
-      <li>
-        <Link to="/contact_us">Contact Us</Link>
-      </li>
-      <li>
-        <Link to="/about">About</Link>
-      </li>
+
       {user && (
         <li>
           <Link to="/dashboard">Dashboard</Link>

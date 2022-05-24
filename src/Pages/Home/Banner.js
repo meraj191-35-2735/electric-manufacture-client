@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import bannerBg from "../../assets/Banner/banner-bg1.jpg";
 
 const Banner = () => {
@@ -21,9 +22,9 @@ const Banner = () => {
             We won Many Industrial Awards and Got Many Certificates Since
             2001-2022
           </p>
-          <button className="btn btn-primary text-white my-5">
+          <Link to="/tools" className="btn btn-primary text-white my-5">
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </div>
