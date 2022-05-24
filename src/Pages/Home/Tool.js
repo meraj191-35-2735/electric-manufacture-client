@@ -14,7 +14,6 @@ const Tool = ({ tool }) => {
   const navigate = useNavigate();
   const handleBookNow = (id) => {
     navigate(`/bookNow/${id}`);
-    console.log(id);
   };
   return (
     <div className="card bg-base-100 shadow-xl">
