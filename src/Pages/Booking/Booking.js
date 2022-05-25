@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { useNavigate, useParams } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { toast } from "react-toastify";
+
 const Booking = () => {
+  const [user] = useAuthState(auth);
   const { toolId } = useParams();
   const [bookingTool, setBookingTool] = useState([]);
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+  const navigate = useNavigate();
+  const [quantityError, setQuantityError] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:5000/tool/${toolId}`)
@@ -16,7 +17,44 @@ const Booking = () => {
       .then((data) => setBookingTool(data));
   }, [toolId]);
 
-  const onSubmit = (data) => console.log(data);
+  const handleError = () => {
+    const quantity = document.getElementById("inputQuantity").value;
+    if (bookingTool.minimumOrder > quantity) {
+      setQuantityError(`Book at least ${bookingTool.minimumOrder} !`);
+    } else if (quantity > bookingTool.availableQuantity) {
+      setQuantityError(
+        `You can book maximum ${bookingTool.availableQuantity}!`
+      );
+    } else {
+      setQuantityError(null);
+    }
+  };
+
+  const handleBooking = (event) => {
+    event.preventDefault();
+    const booking = {
+      user: user.email,
+      userName: user.displayName,
+      phone: event.target.phone.value,
+      bookedItem: bookingTool.name,
+      quantity: event.target.quantity.value,
+    };
+    fetch("http://localhost:5000/booking", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.success) {
+          alert(`Successfully Booked The Tool!`);
+        } else {
+          toast.error(`Something Went Wrong, Please Try Again!`);
+        }
+      });
+  };
 
   return (
     <div>
@@ -47,56 +85,67 @@ const Booking = () => {
             Price/Tool(Price Per Tool): {bookingTool.price}$
           </p>
           <div className="form-control mx-auto  w-full max-w-xs">
-            <label className="label">
-              <span className="label-text">Enter Quantity</span>
-            </label>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <h3 className="font-bold text-lg text-secondary">
+              Booking for: {bookingTool.name}
+            </h3>
+            <form
+              onSubmit={handleBooking}
+              className="grid grid-cols-1 gap-3 justify-items-center mt-2"
+            >
               <input
                 type="text"
+                name="name"
+                disabled
+                value={user?.displayName || ""}
+                className="input input-bordered w-full max-w-xs"
+              />
+              <input
+                type="email"
+                name="email"
+                disabled
+                value={user?.email || ""}
+                className="input input-bordered w-full max-w-xs"
+              />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                className="input input-bordered w-full max-w-xs"
+              />
+              <label className="label">
+                <span className="label-text">Enter Quantity</span>
+              </label>
+              <input
+                onChange={handleError}
+                type="text"
+                id="inputQuantity"
+                name="quantity"
                 defaultValue={bookingTool.minimumOrder}
                 contentEditable="true"
                 placeholder="Quantity"
                 className="input input-bordered input-primary w-full max-w-xs"
-                {...register("quantity", {
-                  required: {
-                    value: true,
-                    message: "Quantity Is Required!",
-                  },
-                  min: {
-                    value: bookingTool.minimumOrder,
-                    message: `Order At least ${bookingTool.minimumOrder} piece!`,
-                  },
-                  max: {
-                    value: bookingTool.availableQuantity,
-                    message: `Can order maximum ${bookingTool.availableQuantity} piece!`,
-                  },
-                })}
               />
-              <label className="label text-sm">
-                {errors.quantity?.type === "required" && (
-                  <span className="label-text-alt text-red-600">
-                    {errors.quantity.message}
-                  </span>
-                )}
-                {errors.quantity?.type === "min" && (
-                  <span className="label-text-alt text-red-600">
-                    {errors.quantity.message}
-                  </span>
-                )}
-                {errors.quantity?.type === "max" && (
-                  <span className="label-text-alt text-red-600">
-                    {errors.quantity.message}
-                  </span>
-                )}
-              </label>
-
-              <div className="flex justify-center">
+              {
+                <p className="text-red-600 font-bold">
+                  <small>{quantityError}</small>
+                </p>
+              }
+              {quantityError ? (
                 <input
-                  className="btn btn-primary  text-white"
+                  disabled
+                  id="submitButton"
                   type="submit"
-                  value="Book Now"
+                  value="Submit"
+                  className="btn btn-primary w-full max-w-xs"
                 />
-              </div>
+              ) : (
+                <input
+                  id="submitButton"
+                  type="submit"
+                  value="Submit"
+                  className="btn btn-primary w-full max-w-xs"
+                />
+              )}
             </form>
           </div>
         </div>
