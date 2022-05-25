@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Bookings from "./Pages/Dashboard/Bookings";
 import AddAReview from "./Pages/Dashboard/AddAReview";
+import Users from "./Pages/Dashboard/Users";
 function App() {
   return (
     <div className="px-6 lg:px-10">
@@ -35,6 +36,7 @@ function App() {
         >
           <Route index element={<Bookings></Bookings>}></Route>
           <Route path="addAReview" element={<AddAReview></AddAReview>}></Route>
+          <Route path="users" element={<Users></Users>}></Route>
         </Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<SignUp></SignUp>}></Route>
