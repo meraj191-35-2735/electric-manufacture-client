@@ -13,7 +13,7 @@ const Booking = () => {
   const [quantityError, setQuantityError] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tool/${toolId}`)
+    fetch(`https://quiet-inlet-26625.herokuapp.com/tool/${toolId}`)
       .then((res) => res.json())
       .then((data) => setBookingTool(data));
   }, [toolId]);
@@ -40,7 +40,7 @@ const Booking = () => {
       bookedItem: bookingTool.name,
       quantity: event.target.quantity.value,
     };
-    fetch("http://localhost:5000/booking", {
+    fetch("https://quiet-inlet-26625.herokuapp.com/booking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
