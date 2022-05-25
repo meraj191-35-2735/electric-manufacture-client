@@ -113,7 +113,7 @@ const AddAReview = () => {
           <label className="input-group mb-3">
             <span className="px-[-4]">Star</span>
             <input
-              type="text"
+              type="number"
               name="star"
               className="input input-bordered "
               {...register("star", {
