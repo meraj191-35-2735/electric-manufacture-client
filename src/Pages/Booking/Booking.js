@@ -86,8 +86,9 @@ const Booking = () => {
             Price/Tool(Price Per Tool): {bookingTool.price}$
           </p>
           <div className="form-control mx-auto  w-full max-w-xs">
-            <h3 className="font-bold text-lg text-secondary">
-              Booking for: {bookingTool.name}
+            <h3 className="font-bold text-lg py-3">
+              Booking for:{" "}
+              <span className="text-accent">{bookingTool.name}</span>
             </h3>
             <form
               onSubmit={handleBooking}
@@ -105,16 +106,19 @@ const Booking = () => {
                 name="email"
                 disabled
                 value={user?.email || ""}
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered  w-full max-w-xs"
               />
               <input
                 type="text"
                 name="phone"
                 placeholder="Phone Number"
-                className="input input-bordered w-full max-w-xs"
+                required
+                className="input input-bordered input-primary w-full max-w-xs"
               />
               <label className="label">
-                <span className="label-text">Enter Quantity</span>
+                <span className="label-text text-secondary font-bold">
+                  Enter Quantity
+                </span>
               </label>
               <input
                 onChange={handleError}
@@ -136,15 +140,15 @@ const Booking = () => {
                   disabled
                   id="submitButton"
                   type="submit"
-                  value="Submit"
-                  className="btn btn-primary w-full max-w-xs"
+                  value="Book"
+                  className="btn btn-primary text-white w-full max-w-xs"
                 />
               ) : (
                 <input
                   id="submitButton"
                   type="submit"
-                  value="Submit"
-                  className="btn btn-primary w-full max-w-xs"
+                  value="Book"
+                  className="btn btn-primary  text-white w-full max-w-xs"
                 />
               )}
             </form>

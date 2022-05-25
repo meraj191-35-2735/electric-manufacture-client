@@ -32,7 +32,7 @@ const Bookings = () => {
   }, [user, navigate]);
   return (
     <div>
-      <h2 className="text-2xl text-center py-3 font-bold">My Appointments</h2>
+      <h2 className="text-2xl text-center py-3 font-bold">My Booking Tools</h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>

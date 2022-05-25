@@ -11,7 +11,14 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Bookings from "./Pages/Dashboard/Bookings";
 import AddAReview from "./Pages/Dashboard/AddAReview";
 import Users from "./Pages/Dashboard/Users";
+import RequireAdmin from "./Pages/Login/RequireAdmin";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
+import useAdmin from "./hooks/useAdmin";
+import MyProfile from "./Pages/Dashboard/MyProfile";
 function App() {
+  const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   return (
     <div className="px-6 lg:px-10">
       <Navbar></Navbar>
@@ -34,9 +41,37 @@ function App() {
             </RequireAuth>
           }
         >
-          <Route index element={<Bookings></Bookings>}></Route>
-          <Route path="addAReview" element={<AddAReview></AddAReview>}></Route>
-          <Route path="users" element={<Users></Users>}></Route>
+          {!admin && (
+            <>
+              <Route index element={<Bookings></Bookings>}></Route>{" "}
+              <Route
+                path="addAReview"
+                element={<AddAReview></AddAReview>}
+              ></Route>
+            </>
+          )}
+
+          {admin && (
+            <>
+              <Route
+                index
+                element={
+                  <RequireAdmin>
+                    <Users></Users>
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="user"
+                element={
+                  <RequireAdmin>
+                    <Users></Users>
+                  </RequireAdmin>
+                }
+              ></Route>
+            </>
+          )}
+          <Route path="myProfile" element={<MyProfile></MyProfile>}></Route>
         </Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<SignUp></SignUp>}></Route>

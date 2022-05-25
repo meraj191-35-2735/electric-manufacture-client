@@ -21,19 +21,27 @@ const Users = () => {
   }
   return (
     <div>
-      <h2 className="text-2xl font-bold text-center py-3">All Users</h2>
+      <h2 className="text-2xl font-bold text-center py-3">
+        Users Of This Website
+      </h2>
       <div class="overflow-x-auto">
         <table class="table w-full">
           <thead>
             <tr>
+              <th>Serial no.</th>
               <th>Gmail</th>
-              <th>Action</th>
+              <th>Position</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => (
-              <User key={user._id} user={user} refetch={refetch}></User>
+            {users.map((user, index) => (
+              <User
+                index={index}
+                key={user._id}
+                user={user}
+                refetch={refetch}
+              ></User>
             ))}
           </tbody>
         </table>

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Review = ({ review }) => {
-  const { name, des, image, country } = review;
+  const { name, des, stars, image, country } = review;
   return (
     <div className="card  bg-base-100 shadow-xl">
       <div className="flex justify-center items-center">
@@ -13,7 +13,12 @@ const Review = ({ review }) => {
       </div>
       <div className="card-body ">
         <h2 className="card-title">{name}</h2>
-        <p className="text-xs">{country}</p>
+        <div className="flex justify-between">
+          <p className="text-sm">{country}</p>
+          <p className="text-sm">
+            Stars: <span className="font-semibold"> {stars}</span>
+          </p>
+        </div>
         <p className="text-justify">{des}</p>
       </div>
     </div>
