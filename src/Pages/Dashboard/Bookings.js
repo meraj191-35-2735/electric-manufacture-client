@@ -35,9 +35,11 @@ const Bookings = () => {
   }, [user, navigate]);
   return (
     <div>
-      <h2 className="text-2xl text-center py-3 font-bold">My Booking Tools</h2>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <h2 className="text-3xl text-primary underline text-center py-3 font-bold">
+        My Booking Tools
+      </h2>
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th>Serial No.</th>

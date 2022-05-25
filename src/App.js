@@ -16,9 +16,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import useAdmin from "./hooks/useAdmin";
 import MyProfile from "./Pages/Dashboard/MyProfile";
+import Loading from "./Pages/Shared/Loading";
 function App() {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const [admin] = useAdmin(user);
+  if (loading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="px-6 lg:px-10">
       <Navbar></Navbar>
