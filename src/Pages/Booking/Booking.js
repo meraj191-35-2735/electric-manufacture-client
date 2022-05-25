@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+// import { useNavigate, useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 
 const Booking = () => {
   const [user] = useAuthState(auth);
   const { toolId } = useParams();
   const [bookingTool, setBookingTool] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [quantityError, setQuantityError] = useState("");
 
   useEffect(() => {

@@ -7,23 +7,37 @@ import SignUp from "./Pages/SignUp/SignUp";
 import RequireAuth from "./Pages/Login/RequireAuth";
 import ToolPage from "./Pages/ToolPage/ToolPage";
 import { ToastContainer } from "react-toastify";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Bookings from "./Pages/Dashboard/Bookings";
+import AddAReview from "./Pages/Dashboard/AddAReview";
 function App() {
   return (
     <div className="px-6 lg:px-10">
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/tools" element={<ToolPage></ToolPage>}></Route>
+        <Route path="tools" element={<ToolPage></ToolPage>}></Route>
         <Route
-          path="/bookNow/:toolId"
+          path="bookNow/:toolId"
           element={
             <RequireAuth>
               <Booking></Booking>
             </RequireAuth>
           }
         ></Route>
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/signup" element={<SignUp></SignUp>}></Route>
+        <Route
+          path="dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard></Dashboard>
+            </RequireAuth>
+          }
+        >
+          <Route index element={<Bookings></Bookings>}></Route>
+          <Route path="addAReview" element={<AddAReview></AddAReview>}></Route>
+        </Route>
+        <Route path="login" element={<Login></Login>}></Route>
+        <Route path="signup" element={<SignUp></SignUp>}></Route>
       </Routes>
       <ToastContainer />
     </div>
