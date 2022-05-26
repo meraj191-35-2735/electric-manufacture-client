@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useTool from "../../hooks/useTool";
 import Tool from "./Tool";
 
 const Tools = () => {
-  const [tools, setTools] = useState([]);
-  useEffect(() => {
-    fetch("https://quiet-inlet-26625.herokuapp.com/tool")
-      .then((res) => res.json())
-      .then((data) => setTools(data));
-  }, []);
+  const [tools] = useTool();
+
   return (
     <div>
       <h1 className="text-center text-5xl text-primary my-10 font-serif">

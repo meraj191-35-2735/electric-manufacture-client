@@ -18,6 +18,8 @@ import useAdmin from "./hooks/useAdmin";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Loading from "./Pages/Shared/Loading";
 import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
+import ManageProducts from "./Pages/Dashboard/ManageProducts";
+
 function App() {
   const [user, loading] = useAuthState(auth);
   const [admin] = useAdmin(user);
@@ -74,6 +76,14 @@ function App() {
                 element={
                   <RequireAdmin>
                     <Users></Users>
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="manageProducts"
+                element={
+                  <RequireAdmin>
+                    <ManageProducts></ManageProducts>
                   </RequireAdmin>
                 }
               ></Route>

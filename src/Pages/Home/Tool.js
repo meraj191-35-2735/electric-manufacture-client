@@ -1,7 +1,13 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
+import Loading from "../Shared/Loading";
 
 const Tool = ({ tool }) => {
+  const [user, loading] = useAuthState(auth);
+  const [admin] = useAdmin(user);
   const {
     _id,
     name,
@@ -15,6 +21,9 @@ const Tool = ({ tool }) => {
   const handleBookNow = (id) => {
     navigate(`/bookNow/${id}`);
   };
+  if (loading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure>
@@ -38,12 +47,22 @@ const Tool = ({ tool }) => {
         </div>
         <div className="card-actions flex justify-between">
           <p className="text-3xl py-2">Price: {price}$</p>
-          <button
-            onClick={() => handleBookNow(_id)}
-            className="btn btn-primary btn-sm mt-3 text-white"
-          >
-            Book Now
-          </button>
+          {admin ? (
+            <button
+              onClick={() => handleBookNow(_id)}
+              disabled
+              className="btn btn-primary btn-sm mt-3 text-white"
+            >
+              Book Now
+            </button>
+          ) : (
+            <button
+              onClick={() => handleBookNow(_id)}
+              className="btn btn-primary btn-sm mt-3 text-white"
+            >
+              Book Now
+            </button>
+          )}
         </div>
       </div>
     </div>
