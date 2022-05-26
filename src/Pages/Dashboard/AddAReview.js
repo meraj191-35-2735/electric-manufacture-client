@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddAReview = () => {
   const {
@@ -9,6 +10,7 @@ const AddAReview = () => {
     handleSubmit,
     reset,
   } = useForm();
+  const navigate = useNavigate();
 
   const imageStorageKey = "a32c190178fb85425c64cab338bdde0e";
   const onSubmit = async (data) => {
@@ -45,7 +47,7 @@ const AddAReview = () => {
             .then((inserted) => {
               if (inserted.insertedId) {
                 toast.success("Review added successfully");
-
+                navigate("/");
                 reset();
               } else {
                 toast.error("Failed to add this review, try again!");

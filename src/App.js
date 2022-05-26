@@ -17,6 +17,7 @@ import auth from "./firebase.init";
 import useAdmin from "./hooks/useAdmin";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import Loading from "./Pages/Shared/Loading";
+import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
 function App() {
   const [user, loading] = useAuthState(auth);
   const [admin] = useAdmin(user);
@@ -54,7 +55,10 @@ function App() {
               ></Route>
             </>
           )}
-
+          <Route
+            path="updateProfile"
+            element={<UpdateProfile></UpdateProfile>}
+          ></Route>
           {admin && (
             <>
               <Route
