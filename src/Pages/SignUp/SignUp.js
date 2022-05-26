@@ -23,7 +23,7 @@ const SignUp = () => {
   let signInError;
 
   if (user || gUser) {
-    navigate("/appointment");
+    navigate("/");
   }
   if (error || gError || updateError) {
     signInError = (
