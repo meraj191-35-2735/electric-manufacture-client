@@ -20,6 +20,7 @@ import Loading from "./Pages/Shared/Loading";
 import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
 import ManageProducts from "./Pages/Dashboard/ManageProducts";
 import NotFound from "./Pages/NotFound/NotFound";
+import AddATool from "./Pages/Dashboard/AddATool";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -87,6 +88,14 @@ function App() {
                 element={
                   <RequireAdmin>
                     <ManageProducts></ManageProducts>
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="addATool"
+                element={
+                  <RequireAdmin>
+                    <AddATool></AddATool>
                   </RequireAdmin>
                 }
               ></Route>
