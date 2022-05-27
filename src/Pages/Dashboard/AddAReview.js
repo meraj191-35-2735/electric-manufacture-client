@@ -33,8 +33,7 @@ const AddAReview = () => {
             des: data.description,
             image: image,
           };
-          console.log(review);
-          // send to your database
+
           fetch("https://quiet-inlet-26625.herokuapp.com/review", {
             method: "POST",
             headers: {

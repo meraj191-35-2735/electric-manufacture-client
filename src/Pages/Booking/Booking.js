@@ -49,7 +49,8 @@ const Booking = () => {
       .then((data) => {
         if (data.success) {
           alert(`Successfully Booked The Tool!`);
-          navigate("/");
+          console.log(data);
+          // navigate("/");
         } else {
           alert(`Something Went Wrong, Please Try Again!`);
         }
