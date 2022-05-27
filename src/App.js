@@ -19,6 +19,7 @@ import MyProfile from "./Pages/Dashboard/MyProfile";
 import Loading from "./Pages/Shared/Loading";
 import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
 import ManageProducts from "./Pages/Dashboard/ManageProducts";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -95,6 +96,7 @@ function App() {
         </Route>
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<SignUp></SignUp>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>

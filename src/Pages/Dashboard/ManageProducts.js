@@ -12,7 +12,7 @@ const ManageProducts = () => {
     tools.splice(indexOfTool, 1);
     const restTools = [...tools];
     setTools(restTools);
-    fetch(`http://localhost:5000/tool/${tool._id}`, {
+    fetch(`https://quiet-inlet-26625.herokuapp.com/tool/${tool._id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
