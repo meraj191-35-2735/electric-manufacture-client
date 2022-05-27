@@ -1,4 +1,5 @@
 import React from "react";
+import ReactStars from "react-rating-stars-component";
 
 const Review = ({ review }) => {
   const { name, des, stars, image, country } = review;
@@ -16,7 +17,15 @@ const Review = ({ review }) => {
         <div className="flex justify-between">
           <p className="text-sm">{country}</p>
           <p className="text-sm">
-            Stars: <span className="font-semibold"> {stars}</span>
+            <ReactStars
+              isHalf={true}
+              value={stars} // onChange={ratingChanged}
+              edit={false}
+              size={24}
+              emptyIcon={<i className="far fa-star"></i>}
+              halfIcon={<i className="fa fa-star-half-alt"></i>}
+              fullIcon={<i className="fa fa-star"></i>}
+            />
           </p>
         </div>
         <p className="text-justify">{des}</p>
