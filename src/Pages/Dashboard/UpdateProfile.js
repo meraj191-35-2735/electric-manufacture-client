@@ -42,8 +42,8 @@ const UpdateProfile = () => {
       >
         {/* Education  */}
         <div>
-          <label class="label">
-            <span class="label-text font-bold">Education</span>
+          <label className="label">
+            <span className="label-text font-bold">Education</span>
           </label>
           <input
             type="text"
@@ -67,8 +67,8 @@ const UpdateProfile = () => {
         </div>
         {/* Phone  */}
         <div>
-          <label class="label">
-            <span class="label-text font-bold">Phone</span>
+          <label className="label">
+            <span className="label-text font-bold">Phone</span>
           </label>
           <input
             type="text"
@@ -92,8 +92,8 @@ const UpdateProfile = () => {
         </div>
         {/* Address  */}
         <div>
-          <label class="label">
-            <span class="label-text font-bold">Address</span>
+          <label className="label">
+            <span className="label-text font-bold">Address</span>
           </label>
           <input
             type="text"
@@ -117,8 +117,8 @@ const UpdateProfile = () => {
         </div>
         {/* Linked In  */}
         <div>
-          <label class="label">
-            <span class="label-text font-bold">LinkedIn Link</span>
+          <label className="label">
+            <span className="label-text font-bold">LinkedIn Link</span>
           </label>
           <input
             type="text"

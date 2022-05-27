@@ -16,17 +16,16 @@ const Review = ({ review }) => {
         <h2 className="card-title">{name}</h2>
         <div className="flex justify-between">
           <p className="text-sm">{country}</p>
-          <p className="text-sm">
-            <ReactStars
-              isHalf={true}
-              value={stars} // onChange={ratingChanged}
-              edit={false}
-              size={24}
-              emptyIcon={<i className="far fa-star"></i>}
-              halfIcon={<i className="fa fa-star-half-alt"></i>}
-              fullIcon={<i className="fa fa-star"></i>}
-            />
-          </p>
+
+          <ReactStars
+            isHalf={true}
+            value={stars} // onChange={ratingChanged}
+            edit={false}
+            size={24}
+            emptyIcon={<i className="far fa-star"></i>}
+            halfIcon={<i className="fa fa-star-half-alt"></i>}
+            fullIcon={<i className="fa fa-star"></i>}
+          />
         </div>
         <p className="text-justify">{des}</p>
       </div>

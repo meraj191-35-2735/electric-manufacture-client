@@ -1,6 +1,7 @@
 import React from "react";
 import useTool from "../../hooks/useTool";
 import Tool from "./Tool";
+import { Link } from "react-router-dom";
 
 const Tools = () => {
   const [tools] = useTool();
@@ -11,10 +12,19 @@ const Tools = () => {
         Tools
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {tools.map((tool) => (
-          <Tool tool={tool} key={tool._id}></Tool>
-        ))}
+        {tools.length > 6
+          ? tools
+              .slice(0, 6)
+              .map((tool) => <Tool tool={tool} key={tool._id}></Tool>)
+          : tools.map((tool) => <Tool tool={tool} key={tool._id}></Tool>)}
       </div>
+      {tools.length > 6 && (
+        <div className="flex justify-end my-3">
+          <Link to="/tools" className="btn btn-sm btn-primary">
+            See More
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

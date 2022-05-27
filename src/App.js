@@ -21,6 +21,7 @@ import UpdateProfile from "./Pages/Dashboard/UpdateProfile";
 import ManageProducts from "./Pages/Dashboard/ManageProducts";
 import NotFound from "./Pages/NotFound/NotFound";
 import AddATool from "./Pages/Dashboard/AddATool";
+import ManageOrder from "./Pages/Dashboard/ManageOrder";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -88,6 +89,14 @@ function App() {
                 element={
                   <RequireAdmin>
                     <ManageProducts></ManageProducts>
+                  </RequireAdmin>
+                }
+              ></Route>
+              <Route
+                path="manageOrder"
+                element={
+                  <RequireAdmin>
+                    <ManageOrder></ManageOrder>
                   </RequireAdmin>
                 }
               ></Route>

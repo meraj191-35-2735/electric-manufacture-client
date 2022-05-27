@@ -32,24 +32,17 @@ const MyProfile = () => {
         Your Profile
       </h1>
       <div className="flex justify-center items-center flex-col">
-        <div class="overflow-x-auto my-3">
-          <table class="table table-auto  w-full ">
+        <div className="overflow-x-auto my-3">
+          <table className="table table-auto  w-full ">
             {/* <!-- head --> */}
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Email</th>
-                {(userData.phone ||
-                  userData.education ||
-                  userData.address ||
-                  userData.linkedin) && (
-                  <>
-                    <th>Phone</th>
-                    <th>University</th>
-                    <th>Address</th>
-                    <th>LinkedIn</th>
-                  </>
-                )}
+                {userData?.phone && <th>Phone</th>}
+                {userData?.education && <th>University</th>}
+                {userData?.address && <th>Address</th>}
+                {userData?.linkedin && <th>LinkedIn</th>}
               </tr>
             </thead>
             <tbody>
