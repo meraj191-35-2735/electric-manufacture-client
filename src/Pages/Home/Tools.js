@@ -20,7 +20,7 @@ const Tools = () => {
       </div>
       {tools.length > 6 && (
         <div className="flex justify-end my-3">
-          <Link to="/tools" className="btn btn-sm btn-primary">
+          <Link to="/tools" className="text-primary font-bold px-3 mt-2">
             See More
           </Link>
         </div>

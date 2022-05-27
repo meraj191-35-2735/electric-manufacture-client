@@ -17,7 +17,7 @@ const BusinessSummary = () => {
       </h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-3">
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-gray-200 shadow-xl">
           <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faGlobe} />
@@ -45,7 +45,7 @@ const BusinessSummary = () => {
             </VisibilitySensor>
           </div>
         </div>
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-gray-200 shadow-xl">
           <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faLightbulb} />
@@ -73,7 +73,7 @@ const BusinessSummary = () => {
             </VisibilitySensor>
           </div>
         </div>
-        <div className="card  bg-base-100 shadow-xl">
+        <div className="card  bg-gray-200 shadow-xl">
           <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faPeopleGroup} />
@@ -101,7 +101,7 @@ const BusinessSummary = () => {
             </VisibilitySensor>
           </div>
         </div>
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-gray-200 shadow-xl">
           <figure className="px-10 pt-10">
             <p className="text-4xl text-secondary">
               <FontAwesomeIcon icon={faThumbsUp} />

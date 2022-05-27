@@ -25,7 +25,7 @@ const Tool = ({ tool }) => {
     return <Loading></Loading>;
   }
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card  shadow-xl bg-gray-200">
       <figure>
         <img className="pt-5 rounded-lg" src={image} alt="Shoes" />
       </figure>

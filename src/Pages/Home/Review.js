@@ -4,7 +4,7 @@ import ReactStars from "react-rating-stars-component";
 const Review = ({ review }) => {
   const { name, des, stars, image, country } = review;
   return (
-    <div className="card  bg-base-100 shadow-xl">
+    <div className="card  bg-gray-200 shadow-xl">
       <div className="flex justify-center items-center">
         <div className="avatar pt-5">
           <div className="w-20 mask mask-hexagon">
