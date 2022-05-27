@@ -24,6 +24,7 @@ const UpdateProfile = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
+          alert("Updated profile successfully");
           navigate("/dashboard/myProfile");
           reset();
         } else {

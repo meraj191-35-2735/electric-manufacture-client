@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faLinkedin } from "@fortawesome/free-solid-svg-icons";
-
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
@@ -18,8 +16,6 @@ const MyProfile = () => {
       .then((data) => setUserData(data));
   }, [user.email]);
 
-  console.log(userData);
-
   if (loading) {
     return <Loading></Loading>;
   }
@@ -28,7 +24,7 @@ const MyProfile = () => {
   };
   return (
     <div>
-      <h1 className="text-center text-3xl text-primary font-bold my-4">
+      <h1 className="text-center text-3xl underline text-primary font-bold my-4">
         Your Profile
       </h1>
       <div className="flex justify-center items-center flex-col">

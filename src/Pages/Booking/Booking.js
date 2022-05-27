@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import { toast } from "react-toastify";
 
 const Booking = () => {
   const [user] = useAuthState(auth);
@@ -49,10 +48,10 @@ const Booking = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
-          toast.success(`Successfully Booked The Tool!`);
+          alert(`Successfully Booked The Tool!`);
           navigate("/");
         } else {
-          toast.error(`Something Went Wrong, Please Try Again!`);
+          alert(`Something Went Wrong, Please Try Again!`);
         }
       });
   };

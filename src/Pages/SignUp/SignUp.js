@@ -44,7 +44,7 @@ const SignUp = () => {
   };
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-gray-200 shadow-xl">
         <div className="card-body">
           <h2 className="text-center text-2xl font-bold">Sign Up</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -142,7 +142,7 @@ const SignUp = () => {
             {signInError}
             {/* Sign Up Button  */}
             <input
-              className="btn btn-active btn-primary w-full max-w-xs"
+              className="btn btn-active btn-primary text-white font-bold w-full max-w-xs"
               type="submit"
               value="Sign Up"
             />
