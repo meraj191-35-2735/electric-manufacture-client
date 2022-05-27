@@ -32,14 +32,16 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="tools" element={<ToolPage></ToolPage>}></Route>
-        <Route
-          path="bookNow/:toolId"
-          element={
-            <RequireAuth>
-              <Booking></Booking>
-            </RequireAuth>
-          }
-        ></Route>
+        {!admin && (
+          <Route
+            path="bookNow/:toolId"
+            element={
+              <RequireAuth>
+                <Booking></Booking>
+              </RequireAuth>
+            }
+          ></Route>
+        )}
         <Route
           path="dashboard"
           element={

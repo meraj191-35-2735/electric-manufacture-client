@@ -1,7 +1,8 @@
 import React from "react";
 
-const SingleTool = ({ tool }) => {
+const SingleTool = ({ tool, handleRemoveTool }) => {
   const { name, image } = tool;
+
   return (
     <tr>
       <td>
@@ -10,7 +11,9 @@ const SingleTool = ({ tool }) => {
       <td>{name}</td>
 
       <td>
-        <button className="btn btn-xs">Delete Product</button>
+        <button onClick={() => handleRemoveTool(tool)} className="btn btn-xs">
+          Delete Product
+        </button>
       </td>
     </tr>
   );
