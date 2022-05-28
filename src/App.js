@@ -23,6 +23,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import AddATool from "./Pages/Dashboard/AddATool";
 import ManageOrder from "./Pages/Dashboard/ManageOrder";
 import Blogs from "./Pages/Blogs/Blogs";
+import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -116,6 +117,7 @@ function App() {
         <Route path="login" element={<Login></Login>}></Route>
         <Route path="signup" element={<SignUp></SignUp>}></Route>
         <Route path="blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="myPortfolio" element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
