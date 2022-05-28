@@ -7,7 +7,7 @@ const LatestNews = () => {
   return (
     <div>
       <h1 className="text-center text-5xl text-primary my-10 font-serif">
-        Latest News
+        Latest Tools News
       </h1>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-3">
         <div class="card  bg-base-100 shadow-xl image-full">
