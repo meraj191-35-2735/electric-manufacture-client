@@ -9,7 +9,7 @@ import Tools from "./Tools";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Banner></Banner>
       <Features></Features>
       <Tools></Tools>
@@ -17,7 +17,7 @@ const Home = () => {
       <Reviews></Reviews>
       <LatestNews></LatestNews>
       <Footer></Footer>
-    </div>
+    </>
   );
 };
 

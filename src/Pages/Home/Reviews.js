@@ -14,9 +14,18 @@ const Reviews = () => {
         Reviews
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-        {reviews
-          .map((review) => <Review key={review._id} review={review}></Review>)
-          .reverse()}
+        {reviews > 6
+          ? reviews
+              .slice(0, 6)
+              .map((review) => (
+                <Review key={review._id} review={review}></Review>
+              ))
+              .reverse()
+          : reviews
+              .map((review) => (
+                <Review key={review._id} review={review}></Review>
+              ))
+              .reverse()}
       </div>
     </div>
   );

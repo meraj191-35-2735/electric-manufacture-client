@@ -4,10 +4,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <div>
-      <h1 className="text-center text-5xl text-primary my-10 font-serif">
-        Opportunities
-      </h1>
+    <div className="mt-2">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-2">
         <div className="grid grid-cols-2 gap-2 my-3 lg:my-0 py-10 border-2 border-primary-focus bg-gray-200  px-5 rounded-lg">
           <div className="flex justify-center  bg-white rounded-full items-center text-secondary">
